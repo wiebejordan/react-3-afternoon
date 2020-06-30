@@ -25,11 +25,10 @@ class App extends Component {
       .catch(err => alert('Failed to get data'));
   }
 
-  updatePost(id, text) {
-    axios.put(`https://https://practiceapi.devmountain.com/api/posts?id=${id}, ${text}`)
-      .then( results => {
-        this.setState({posts: results.data});
-      });
+  updatePost( id, text ) {
+    axios.put(`https://practiceapi.devmountain.com/api/posts?id=${ id }`, { text }).then( results => {
+      this.setState({ posts: results.data });
+    });
   }
 
   deletePost(id) {
